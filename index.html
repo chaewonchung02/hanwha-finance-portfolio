@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="정채원의 한화금융 지원 경험 포트폴리오">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#090909">
+  <title>정채원 | Hanwha Finance Experience Portfolio</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#experiences">경험 목록으로 바로가기</a>
+
+  <header class="site-header" aria-label="상단 메뉴">
+    <a class="wordmark" href="#top" aria-label="포트폴리오 첫 화면">
+      <span class="orbit-mark" aria-hidden="true"><i></i></span>
+      <span>CHAEWON <b>PORTFOLIO</b></span>
+    </a>
+    <nav>
+      <a href="#fit-map">FIT MAP</a>
+      <a href="#experiences">EXPERIENCE</a>
+      <button class="sound-toggle" type="button" id="motionToggle" aria-pressed="false">MOTION ON</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-orbit" aria-hidden="true">
+        <span class="ring ring-one"></span>
+        <span class="ring ring-two"></span>
+        <span class="ring ring-three"></span>
+        <span class="signal signal-one"></span>
+        <span class="signal signal-two"></span>
+      </div>
+
+      <div class="hero-copy reveal">
+        <p class="eyebrow">HANWHA FINANCE · BRAND / MARKETING</p>
+        <h1 id="hero-title">고객의 <em>Why</em>를 읽고,<br>금융의 <em>Next</em>를 설계합니다.</h1>
+        <p class="hero-lead">데이터로 선택의 이유를 찾고, 아이디어를 실행 가능한 성과로 연결해 온 정채원입니다.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#fit-map">직무 적합 경험 찾기 <span aria-hidden="true">↘</span></a>
+          <span class="private-label"><i aria-hidden="true"></i> APPLICATION PORTFOLIO</span>
+        </div>
+      </div>
+
+      <aside class="profile-card reveal" aria-label="지원자 기본 정보">
+        <div class="profile-photo-wrap">
+          <img src="./assets/chae-won.jpg" alt="정채원 증명사진" width="300" height="340">
+          <span>MARKETING<br>CANDIDATE</span>
+        </div>
+        <div class="profile-head">
+          <div>
+            <p class="mini-label">APPLICANT</p>
+            <h2>정채원 <small>Chae Won Jung</small></h2>
+          </div>
+          <span class="status-dot" title="지원 준비 중"></span>
+        </div>
+        <dl class="profile-facts">
+          <div><dt>Education</dt><dd>이화여자대학교<br>영어영문학부 · 경영학부</dd></div>
+          <div><dt>GPA</dt><dd><strong>4.28</strong> / 4.5</dd></div>
+          <div><dt>Focus</dt><dd>고객 분석 · 전략 기획 · 실행</dd></div>
+        </dl>
+      </aside>
+
+      <div class="hero-stats reveal" aria-label="경험 요약">
+        <article><strong>02</strong><span>Industry<br>Internships</span></article>
+        <article><strong>07</strong><span>Industry–Academic<br>Projects</span></article>
+        <article><strong>02</strong><span>Project Manager<br>Experiences</span></article>
+        <article><strong>4.28</strong><span>Cumulative<br>GPA / 4.5</span></article>
+      </div>
+    </section>
+
+    <section class="fit-map" id="fit-map" aria-labelledby="fit-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">01 · ROLE FIT NAVIGATOR</p>
+          <h2 id="fit-title">어떤 역량을<br>찾고 계신가요?</h2>
+        </div>
+        <p>지원 직군과 한화금융 인재상을 선택하면, 첨부 포트폴리오 속 경험을 추천 순서로 정리합니다.</p>
+      </div>
+
+      <div class="navigator-panel reveal">
+        <p class="target-brief"><span>TARGET ROLE</span> 브랜드 전략 · 문화/스포츠 마케팅 · 디지털 캠페인 · CRM · 통합 마케팅 기획/실행</p>
+        <div class="control-group">
+          <span class="control-label">지원 직군</span>
+          <div class="segmented" id="roleTabs" role="group" aria-label="지원 직군 선택">
+            <button type="button" class="active" data-role="marketing" aria-pressed="true">브랜드/마케팅</button>
+            <button type="button" data-role="newbiz" aria-pressed="false">신사업</button>
+            <button type="button" data-role="investment" aria-pressed="false">투자</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <span class="control-label">한화금융 인재상</span>
+          <div class="talent-filters" id="talentFilters" role="group" aria-label="인재상 필터">
+            <button type="button" class="active" data-talent="all" aria-pressed="true">전체</button>
+            <button type="button" data-talent="discipline" aria-pressed="false">Discipline</button>
+            <button type="button" data-talent="creative" aria-pressed="false">Creative Thinking</button>
+            <button type="button" data-talent="purpose" aria-pressed="false">Sense of Purpose</button>
+          </div>
+        </div>
+        <div class="recommendation" aria-live="polite">
+          <span class="recommendation-index" id="recommendationIndex">01</span>
+          <div>
+            <p class="mini-label">BEST EVIDENCE FOR <span id="selectedRoleLabel">BRAND / MARKETING</span></p>
+            <h3 id="recommendationTitle">BMW Korea CRM 마케팅</h3>
+            <p id="recommendationReason">CRM 고객 데이터를 타깃과 디지털 캠페인으로 전환해 채널 평균 대비 210% 유입, 4,000명+ 참여, 35건+ 계약을 만들었습니다.</p>
+          </div>
+          <button type="button" class="text-button" id="viewRecommendation">경험 보기 <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <div class="talent-values reveal" aria-label="한화금융 인재상과 경험 연결">
+        <article>
+          <span>01</span>
+          <h3>Discipline</h3>
+          <p>목표를 끝까지 실행해 계약, 시딩, 프로젝트 수주로 연결했습니다.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Creative Thinking</h3>
+          <p>AI와 데이터를 활용해 기존 방식에서 보이지 않던 답을 찾았습니다.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Sense of Purpose</h3>
+          <p>과업의 목적을 고객과 조직의 실제 가치로 이어 왔습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience-section" id="experiences" aria-labelledby="experience-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">02 · EXPERIENCE EVIDENCE</p>
+          <h2 id="experience-title">역할·행동·성과를<br>한눈에 비교합니다.</h2>
+        </div>
+        <p>카드를 펼쳐 세부 행동을 확인하거나, 최대 3개 경험을 비교함에 담아 나란히 볼 수 있습니다.</p>
+      </div>
+
+      <div class="experience-toolbar reveal">
+        <label class="search-box">
+          <span class="sr-only">경험 검색</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path></svg>
+          <input id="experienceSearch" type="search" placeholder="회사, 역량, 성과 검색" autocomplete="off">
+        </label>
+        <div class="skill-chips" id="skillChips" role="group" aria-label="역량 필터">
+          <button type="button" class="active" data-skill="all" aria-pressed="true">전체</button>
+          <button type="button" data-skill="analysis" aria-pressed="false">분석력</button>
+          <button type="button" data-skill="planning" aria-pressed="false">기획·추진</button>
+          <button type="button" data-skill="customer" aria-pressed="false">고객 이해</button>
+          <button type="button" data-skill="communication" aria-pressed="false">소통·조율</button>
+          <button type="button" data-skill="global" aria-pressed="false">글로벌</button>
+        </div>
+        <p class="result-count"><strong id="resultCount">7</strong> experiences</p>
+      </div>
+
+      <div class="experience-grid" id="experienceGrid"></div>
+
+      <footer class="work-principles reveal">
+        <div>
+          <p class="eyebrow">03 · HOW I WORK</p>
+          <h2>이렇게<br>일하겠습니다.</h2>
+        </div>
+        <ol>
+          <li><span>01</span><div><h3>과정과 목적을 함께 바라보겠습니다.</h3><p>단기 목표 달성을 위해 과업의 목적을 무시하지 않고, 눈앞의 편의를 위해 회사의 비전을 놓치지 않겠습니다.</p></div></li>
+          <li><span>02</span><div><h3>한마디의 피드백에도 HOW TO를 말하겠습니다.</h3><p>“어렵겠다”보다 “이렇게 해보면 어떨까요?”를 먼저 제안하는 동료가 되겠습니다.</p></div></li>
+          <li><span>03</span><div><h3>좋은 태도가 좋은 결과를 만든다고 믿습니다.</h3><p>어떤 상황에서도 열린 마음과 성실한 태도를 유지하며, 함께 일하고 싶은 사람으로 기억되겠습니다.</p></div></li>
+        </ol>
+        <p class="source-note">직군·인재상 기준: <a href="https://www.recruit-hanwhafinance.com/" target="_blank" rel="noreferrer">2026 한화금융 신입공채 공식 사이트 ↗</a><br>경험·수치 기준: 지원자 제공 Experience Map</p>
+      </footer>
+    </section>
+  </main>
+
+  <div class="compare-tray" id="compareTray" hidden>
+    <div><span class="compare-count" id="compareCount">0</span><p><strong>비교함</strong><small>최대 3개 경험</small></p></div>
+    <div class="compare-names" id="compareNames"></div>
+    <button type="button" class="primary-button" id="openCompare">비교하기</button>
+  </div>
+
+  <dialog class="compare-dialog" id="compareDialog" aria-labelledby="compareTitle">
+    <div class="dialog-head">
+      <div><p class="eyebrow">SIDE-BY-SIDE</p><h2 id="compareTitle">경험 비교</h2></div>
+      <button type="button" class="close-button" id="closeCompare" aria-label="비교창 닫기">×</button>
+    </div>
+    <div class="compare-content" id="compareContent"></div>
+  </dialog>
+
+  <script src="./script.js"></script>
+</body>
+</html>
