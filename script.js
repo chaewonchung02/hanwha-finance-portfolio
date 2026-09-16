@@ -534,7 +534,7 @@ slideDialog.addEventListener("click", event => {
   if (event.target === slideDialog) slideDialog.close();
 });
 slideDialog.addEventListener("close", () => {
-  slideImage.src = "";
+  slideImage.removeAttribute("src");
 });
 
 const motionToggle = document.getElementById("motionToggle");
