@@ -272,9 +272,15 @@ const rankings = {
 };
 
 const roleLabels = { marketing: "BRAND / MARKETING", newbiz: "NEW BUSINESS", investment: "INVESTMENT" };
+const jdFitExperienceIds = {
+  campaign: ["bmw"],
+  data: ["bmw", "ob"],
+  imc: ["lgchem", "kakao"],
+  brand: ["kolon", "verish"]
+};
 let selectedRole = "marketing";
-let selectedTalent = "all";
 let selectedSkill = "all";
+let selectedFit = "all";
 let searchTerm = "";
 const compared = new Set();
 
@@ -325,7 +331,7 @@ function getVisibleExperiences() {
   const order = rankings[selectedRole];
   return [...experiences]
     .filter(item => item.roles.includes(selectedRole))
-    .filter(item => selectedTalent === "all" || item.talents.includes(selectedTalent))
+    .filter(item => selectedFit === "all" || jdFitExperienceIds[selectedFit].includes(item.id))
     .filter(item => selectedSkill === "all" || item.skills.includes(selectedSkill))
     .filter(item => {
       if (!searchTerm) return true;
@@ -343,7 +349,6 @@ function renderCards() {
     : `<div class="empty-state">조건에 맞는 경험이 없습니다. 필터나 검색어를 바꿔보세요.</div>`;
   resultCount.textContent = visible.length;
   bindCardEvents();
-  updateRecommendation(visible[0] || experiences.find(item => item.id === order[0]));
 }
 
 function bindCardEvents() {
@@ -358,16 +363,6 @@ function bindCardEvents() {
   document.querySelectorAll("[data-compare]").forEach(button => {
     button.addEventListener("click", () => toggleCompare(button.dataset.compare));
   });
-}
-
-function updateRecommendation(item) {
-  if (!item) return;
-  const rank = rankings[selectedRole].indexOf(item.id) + 1;
-  document.getElementById("recommendationIndex").textContent = String(rank).padStart(2, "0");
-  document.getElementById("selectedRoleLabel").textContent = roleLabels[selectedRole];
-  document.getElementById("recommendationTitle").textContent = `${item.company} ${item.type}`;
-  document.getElementById("recommendationReason").textContent = item.fit[selectedRole];
-  document.getElementById("viewRecommendation").dataset.target = item.id;
 }
 
 function toggleCompare(id) {
@@ -411,27 +406,17 @@ function openComparison() {
   compareDialog.showModal();
 }
 
-document.querySelectorAll("#roleTabs button").forEach(button => {
+document.querySelectorAll(".jd-fit-card").forEach(button => {
   button.addEventListener("click", () => {
-    selectedRole = button.dataset.role;
-    document.querySelectorAll("#roleTabs button").forEach(item => {
-      const active = item === button;
+    const nextFit = button.dataset.fit;
+    selectedFit = selectedFit === nextFit ? "all" : nextFit;
+    document.querySelectorAll(".jd-fit-card").forEach(item => {
+      const active = item.dataset.fit === selectedFit;
       item.classList.toggle("active", active);
       item.setAttribute("aria-pressed", String(active));
     });
     renderCards();
-  });
-});
-
-document.querySelectorAll("#talentFilters button").forEach(button => {
-  button.addEventListener("click", () => {
-    selectedTalent = button.dataset.talent;
-    document.querySelectorAll("#talentFilters button").forEach(item => {
-      const active = item === button;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-    renderCards();
+    document.getElementById("experiences").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
@@ -450,16 +435,6 @@ document.querySelectorAll("#skillChips button").forEach(button => {
 document.getElementById("experienceSearch").addEventListener("input", event => {
   searchTerm = event.target.value.trim().toLowerCase();
   renderCards();
-});
-
-document.getElementById("viewRecommendation").addEventListener("click", event => {
-  const target = document.getElementById(`experience-${event.currentTarget.dataset.target}`);
-  if (!target) return;
-  target.scrollIntoView({ behavior: "smooth", block: "center" });
-  target.classList.add("open");
-  const button = target.querySelector(".details-button");
-  button.setAttribute("aria-expanded", "true");
-  button.textContent = "세부 경험 접기";
 });
 
 document.getElementById("openCompare").addEventListener("click", openComparison);
