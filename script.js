@@ -66,6 +66,39 @@ const experiences = [
     }
   },
   {
+    id: "kolon",
+    company: "코오롱모빌리티그룹",
+    type: "산학협력 프로젝트",
+    period: "대상 수상",
+    title: "인증중고차 마케팅 및 판매 전략 프로젝트",
+    summary: "국내외 중고차 시장과 소비자 218명의 구매 여정을 분석해 차량 상태에 대한 불신을 도출하고, 자사 A/S 인프라 기반의 차별화 서비스와 판매 전략을 제안했습니다.",
+    roles: ["marketing", "newbiz", "investment"],
+    talents: ["discipline", "creative", "purpose"],
+    skills: ["analysis", "planning", "customer", "communication"],
+    tags: ["#인증중고차", "#고객여정", "#판매전략", "#서비스기획"],
+    metrics: [
+      { value: "218명", label: "소비자 설문·심층 인터뷰" },
+      { value: "42개", label: "자사 A/S 센터 활용" },
+      { value: "30%+", label: "제안 전략 실제 반영" }
+    ],
+    role: [
+      "국내 중고차 플랫폼 12곳의 매물·서비스·마케팅 분석",
+      "소비자 218명 설문·심층 인터뷰를 통한 구매 여정 분석",
+      "인도·중국 등 글로벌 경쟁사 30곳+ 서비스 벤치마킹"
+    ],
+    action: [
+      "차량 상태를 직접 확인하기 어렵다는 핵심 불신 요인 도출",
+      "자사 42개 A/S 센터를 활용한 차량 점검 서비스 설계",
+      "바이백·고객 혜택 프로그램과 오프라인 판매 활성화 전략 제안"
+    ],
+    result: "제안 전략 30%+ 실제 서비스 반영 및 산학협력 프로젝트 대상 수상",
+    fit: {
+      marketing: "218명의 구매 여정을 분석해 차량 상태에 대한 불신을 핵심 진입 장벽으로 정의하고, 자사 인프라를 고객 신뢰와 구매 이유로 전환했습니다.",
+      newbiz: "12곳의 국내 플랫폼과 30곳+ 글로벌 경쟁사를 비교하고, 42개 A/S 센터를 활용한 신규 점검·바이백 서비스를 설계했습니다.",
+      investment: "시장·고객·경쟁 환경을 공통 기준으로 분석해 실행 우선순위를 정하고, 제안 전략의 30%+ 실제 반영을 이끌었습니다."
+    }
+  },
+  {
     id: "lgchem",
     company: "LG화학",
     type: "산학협력 프로젝트 · PM",
@@ -233,9 +266,9 @@ const experiences = [
 ];
 
 const rankings = {
-  marketing: ["bmw", "ob", "verish", "lgchem", "communication", "kakao", "loreal"],
-  newbiz: ["kakao", "loreal", "lgchem", "verish", "ob", "bmw", "communication"],
-  investment: ["loreal", "verish", "lgchem", "ob", "kakao", "bmw", "communication"]
+  marketing: ["bmw", "ob", "kolon", "verish", "lgchem", "communication", "kakao", "loreal"],
+  newbiz: ["kakao", "kolon", "loreal", "lgchem", "verish", "ob", "bmw", "communication"],
+  investment: ["loreal", "verish", "lgchem", "kolon", "ob", "kakao", "bmw", "communication"]
 };
 
 const roleLabels = { marketing: "BRAND / MARKETING", newbiz: "NEW BUSINESS", investment: "INVESTMENT" };
