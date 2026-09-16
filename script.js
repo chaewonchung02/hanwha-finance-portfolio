@@ -92,6 +92,11 @@ const experiences = [
       "바이백·고객 혜택 프로그램과 오프라인 판매 활성화 전략 제안"
     ],
     result: "제안 전략 30%+ 실제 서비스 반영 및 산학협력 프로젝트 대상 수상",
+    gallery: [
+      { src: "./assets/project-slides/kolon-cover.jpg", label: "프로젝트 표지" },
+      { src: "./assets/project-slides/kolon-service.jpg", label: "A/S 인프라 기반 차별화 전략" },
+      { src: "./assets/project-slides/kolon-campaign.jpg", label: "702 브랜드 각인 캠페인" }
+    ],
     fit: {
       marketing: "218명의 구매 여정을 분석해 차량 상태에 대한 불신을 핵심 진입 장벽으로 정의하고, 자사 인프라를 고객 신뢰와 구매 이유로 전환했습니다.",
       newbiz: "12곳의 국내 플랫폼과 30곳+ 글로벌 경쟁사를 비교하고, 42개 A/S 센터를 활용한 신규 점검·바이백 서비스를 설계했습니다.",
@@ -125,6 +130,11 @@ const experiences = [
       "LETZero 브랜딩 및 IMC 커뮤니케이션 전략 제안"
     ],
     result: "소비자 세분화와 시장 분석을 제품별 소재 적용안 및 IMC 전략으로 연결",
+    gallery: [
+      { src: "./assets/project-slides/lgchem-cover.jpg", label: "프로젝트 표지" },
+      { src: "./assets/project-slides/lgchem-imc.jpg", label: "LETZero 인지·경험·확산 IMC 구조" },
+      { src: "./assets/project-slides/lgchem-collab.jpg", label: "LG트윈스 브랜드 협업 실행안" }
+    ],
     fit: {
       marketing: "750건+ 고객 조사로 세그먼트를 정의하고 LETZero 브랜드의 소재 적용·IMC 전략으로 연결했습니다.",
       newbiz: "규제·시장·고객 데이터를 결합해 친환경 소재의 신규 적용 기회를 설계했습니다.",
@@ -158,10 +168,53 @@ const experiences = [
       "신기능 및 서비스 개선 전략 기획"
     ],
     result: "16건+ DAU 확보 전략 제안, ‘현업에서 바로 실행 가능한 전략’ 평가와 우수상 수상",
+    gallery: [
+      { src: "./assets/project-slides/kakao-cover.jpg", label: "프로젝트 표지" },
+      { src: "./assets/project-slides/kakao-summary.jpg", label: "DAU 성장 전략 Executive Summary" },
+      { src: "./assets/project-slides/kakao-campaign.jpg", label: "일상 접점형 금융 챌린지 캠페인" }
+    ],
     fit: {
       marketing: "90건+ 고객 조사와 100개+ 앱 벤치마킹을 유입·체류·재방문·락인 전 과정의 디지털 마케팅 전략으로 구체화했습니다.",
       newbiz: "100개+ 앱과 90건+ 사용자 조사를 결합해 16건+ 신규 서비스 전략을 만들었습니다.",
       investment: "앱별 지표를 공통 기준으로 비교하고 고객 검증을 더해 실행 우선순위를 정했습니다."
+    }
+  },
+  {
+    id: "finter",
+    company: "Quantit · Finter",
+    type: "산학협력 프로젝트",
+    period: "2024.11 – 2024.12 · 대상",
+    title: "주식 커뮤니티 리텐션 향상 전략",
+    summary: "투자 정보의 격차를 줄이고 신뢰 기반 커뮤니티를 만들기 위해 유입부터 리텐션까지의 이용 여정을 분석하고 서비스 활성화 전략을 제안했습니다.",
+    roles: ["marketing", "newbiz", "investment"],
+    talents: ["discipline", "creative", "purpose"],
+    skills: ["analysis", "planning", "customer", "communication"],
+    tags: ["#금융산업", "#주식커뮤니티", "#리텐션", "#게이미피케이션"],
+    metrics: [
+      { value: "20개", label: "전략 아이디어 도출" },
+      { value: "8개", label: "서비스 전략 구체화" },
+      { value: "대상", label: "산학협력 프로젝트" }
+    ],
+    role: [
+      "주식 커뮤니티 이용자의 글·댓글 행태 모니터링 및 이용 패턴 분석",
+      "유저 테스트 설계와 커뮤니티 이탈 요인 도출",
+      "주식 커뮤니티 플랫폼과 플레이어 벤치마킹"
+    ],
+    action: [
+      "유입–탐색–참여–리텐션 전 과정의 사용자 여정과 Pain Point 구조화",
+      "관심사 기반 큐레이션, 활동 등급제와 게이미피케이션 전략 설계",
+      "메인 UI/UX 개선과 벤치마킹을 포함한 20개 아이디어·8개 전략 구체화"
+    ],
+    result: "유저 인사이트 기반 서비스 활성화 전략으로 산학협력 프로젝트 대상 수상",
+    gallery: [
+      { src: "./assets/project-slides/finter-cover.jpg", label: "프로젝트 표지" },
+      { src: "./assets/project-slides/finter-journey.jpg", label: "유저 저니별 Pain Point" },
+      { src: "./assets/project-slides/finter-strategy.jpg", label: "관심 키워드 기반 오늘의 핀터픽" }
+    ],
+    fit: {
+      marketing: "투자자의 이용 행태와 이탈 요인을 고객 여정으로 구조화하고, 리텐션을 높이는 콘텐츠·게이미피케이션 전략으로 전환했습니다.",
+      newbiz: "주식 커뮤니티의 문제를 유저 테스트로 검증하고 20개 아이디어를 8개 실행 전략으로 구체화했습니다.",
+      investment: "투자 정보 탐색과 커뮤니티 참여 행태를 분석해 금융 고객의 니즈와 서비스 활성화 요인을 도출했습니다."
     }
   },
   {
@@ -191,6 +244,10 @@ const experiences = [
       "UGC 성과 모니터링 및 실행안 보완"
     ],
     result: "UGC 누적 조회수 10만 회 달성, 솔로지옥 협업 전략 실제 반영",
+    gallery: [
+      { src: "./assets/project-slides/verish-concept.jpg", label: "Very She 바이럴 핵심 콘셉트" },
+      { src: "./assets/project-slides/verish-content.jpg", label: "북미 인플루언서 시딩 콘텐츠" }
+    ],
     fit: {
       marketing: "4개국 시장 분석부터 인플루언서 시딩·바이럴 캠페인 실행까지 연결해 UGC 10만 조회를 달성했습니다.",
       newbiz: "4개국을 비교해 우선 시장을 선택하고 현지 고객 접점을 실제로 검증했습니다.",
@@ -257,6 +314,9 @@ const experiences = [
       "COEX 입시박람회 부스 운영 및 30여 명 단원 커뮤니케이션"
     ],
     result: "산학협력 프로젝트 3건 수주, 공식 SNS 게시글 9.3천 회 조회",
+    gallery: [
+      { src: "./assets/project-slides/communication-overview.jpg", label: "ECON PR·이화로사 커뮤니케이션 결과물" }
+    ],
     fit: {
       marketing: "브랜드 SNS와 대외 커뮤니케이션을 직접 운영해 9.3천 조회와 협력 프로젝트 3건 수주로 연결했습니다.",
       newbiz: "기업별 협력 가능성을 제안서와 미팅으로 구체화해 신규 프로젝트를 확보했습니다.",
@@ -266,17 +326,18 @@ const experiences = [
 ];
 
 const rankings = {
-  marketing: ["bmw", "ob", "kolon", "verish", "lgchem", "communication", "kakao", "loreal"],
-  newbiz: ["kakao", "kolon", "loreal", "lgchem", "verish", "ob", "bmw", "communication"],
-  investment: ["loreal", "verish", "lgchem", "kolon", "ob", "kakao", "bmw", "communication"]
+  marketing: ["bmw", "ob", "kolon", "verish", "lgchem", "communication", "kakao", "finter", "loreal"],
+  newbiz: ["kakao", "kolon", "finter", "loreal", "lgchem", "verish", "ob", "bmw", "communication"],
+  investment: ["finter", "kakao", "loreal", "verish", "lgchem", "kolon", "ob", "bmw", "communication"]
 };
 
 const roleLabels = { marketing: "BRAND / MARKETING", newbiz: "NEW BUSINESS", investment: "INVESTMENT" };
 const jdFitExperienceIds = {
+  finance: ["finter", "kakao"],
   campaign: ["bmw"],
   data: ["bmw", "ob"],
-  imc: ["lgchem", "kakao"],
-  brand: ["kolon", "verish"]
+  imc: ["lgchem", "kolon"],
+  brand: ["verish", "communication"]
 };
 let selectedRole = "marketing";
 let selectedSkill = "all";
@@ -291,6 +352,9 @@ const compareCount = document.getElementById("compareCount");
 const compareNames = document.getElementById("compareNames");
 const compareDialog = document.getElementById("compareDialog");
 const compareContent = document.getElementById("compareContent");
+const slideDialog = document.getElementById("slideDialog");
+const slideImage = document.getElementById("slideImage");
+const slideCaption = document.getElementById("slideCaption");
 
 function cardTemplate(item, rank) {
   const metrics = item.metrics.map(metric => `
@@ -299,6 +363,18 @@ function cardTemplate(item, rank) {
   const tags = item.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
   const roleItems = item.role.map(text => `<li>${text}</li>`).join("");
   const actionItems = item.action.map(text => `<li>${text}</li>`).join("");
+  const gallery = item.gallery?.length ? `
+    <div class="project-gallery-wrap">
+      <div class="gallery-heading"><h4>Project Deck</h4><span>표지와 핵심 장표 · 클릭해서 크게 보기</span></div>
+      <div class="project-gallery">
+        ${item.gallery.map((slide, index) => `
+          <button class="gallery-thumb" type="button" data-slide-src="${slide.src}" data-slide-caption="${item.company} · ${slide.label}">
+            <img src="${slide.src}" alt="${item.company} ${slide.label}" loading="lazy">
+            <span><b>${String(index + 1).padStart(2, "0")}</b>${slide.label}</span>
+          </button>
+        `).join("")}
+      </div>
+    </div>` : "";
   return `
     <article class="experience-card ${rank <= 3 ? "is-recommended" : ""}" id="experience-${item.id}" data-id="${item.id}">
       ${rank <= 3 ? `<span class="card-rank">추천 ${rank}</span>` : ""}
@@ -319,6 +395,7 @@ function cardTemplate(item, rank) {
           <div><h4>Result</h4><ul><li>${item.result}</li></ul></div>
           <div><h4>Hanwha Finance Fit</h4><ul><li>${item.fit[selectedRole]}</li></ul></div>
         </div>
+        ${gallery}
       </div></div>
       <div class="card-actions">
         <button class="details-button" type="button" aria-expanded="false" aria-controls="details-${item.id}">세부 경험 펼치기</button>
@@ -363,6 +440,9 @@ function bindCardEvents() {
   document.querySelectorAll("[data-compare]").forEach(button => {
     button.addEventListener("click", () => toggleCompare(button.dataset.compare));
   });
+  document.querySelectorAll("[data-slide-src]").forEach(button => {
+    button.addEventListener("click", () => openSlide(button.dataset.slideSrc, button.dataset.slideCaption));
+  });
 }
 
 function toggleCompare(id) {
@@ -406,6 +486,13 @@ function openComparison() {
   compareDialog.showModal();
 }
 
+function openSlide(src, caption) {
+  slideImage.src = src;
+  slideImage.alt = caption;
+  slideCaption.textContent = caption;
+  slideDialog.showModal();
+}
+
 document.querySelectorAll(".jd-fit-card").forEach(button => {
   button.addEventListener("click", () => {
     const nextFit = button.dataset.fit;
@@ -441,6 +528,13 @@ document.getElementById("openCompare").addEventListener("click", openComparison)
 document.getElementById("closeCompare").addEventListener("click", () => compareDialog.close());
 compareDialog.addEventListener("click", event => {
   if (event.target === compareDialog) compareDialog.close();
+});
+document.getElementById("closeSlide").addEventListener("click", () => slideDialog.close());
+slideDialog.addEventListener("click", event => {
+  if (event.target === slideDialog) slideDialog.close();
+});
+slideDialog.addEventListener("close", () => {
+  slideImage.src = "";
 });
 
 const motionToggle = document.getElementById("motionToggle");
