@@ -130,14 +130,16 @@ body.motion-on .ring-three { animation: orbitThree 22s linear infinite; }
 .fit-heading h2 { font-size: clamp(34px, 3.5vw, 50px); line-height: 1; white-space: nowrap; }
 .title-accent, .statement-accent { color: var(--orange); }
 .fit-heading > .fit-statement {
-  max-width: 1050px;
+  width: 100%;
+  max-width: none;
   margin: 30px auto 0;
   color: #181818;
-  font-size: clamp(21px, 1.85vw, 29px);
+  font-size: clamp(18px, 1.45vw, 22px);
   font-weight: 800;
   line-height: 1.45;
   letter-spacing: -.035em;
   text-align: center;
+  white-space: nowrap;
   word-break: keep-all;
 }
 .statement-muted { color: #4a4a4a; }
@@ -277,7 +279,7 @@ body.motion-on .ring-three { animation: orbitThree 22s linear infinite; }
 
 @media (max-width: 1500px) {
   .fit-heading h2 { font-size: 42px; }
-  .fit-heading > .fit-statement { font-size: clamp(20px, 1.8vw, 26px); }
+  .fit-heading > .fit-statement { font-size: clamp(18px, 1.45vw, 22px); }
   .jd-fit-card h3 { font-size: 25px; }
   .jd-fit-card strong { font-size: 11.5px; }
 }
