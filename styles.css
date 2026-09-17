@@ -142,8 +142,8 @@ body.motion-on .ring-three { animation: orbitThree 22s linear infinite; }
 }
 .statement-muted { color: #4a4a4a; }
 .experience-heading { display: block; }
-.experience-heading > div { max-width: 1080px; }
-.experience-heading h2 { white-space: normal; }
+.experience-heading > div { max-width: none; }
+.experience-heading h2 { font-size: clamp(36px, 3.8vw, 58px); white-space: nowrap; }
 .experience-heading > div > p:last-child { max-width: 920px; margin: 26px 0 0; color: #8c8c8c; font-size: 15px; line-height: 1.7; word-break: keep-all; }
 
 .jd-fit-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; max-width: var(--max); margin: auto; }
@@ -219,12 +219,12 @@ body.motion-on .ring-three { animation: orbitThree 22s linear infinite; }
 .gallery-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
 .gallery-heading h4 { margin: 0; color: var(--orange); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .gallery-heading span { color: #a0a0a0; font-size: 11px; }
-.project-gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.project-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .project-gallery.single { grid-template-columns: minmax(0, 1fr); }
 .gallery-thumb { overflow: hidden; padding: 0; color: #ddd; text-align: left; background: #0c0c0c; border: 1px solid #303030; border-radius: 12px; cursor: zoom-in; transition: transform .2s ease, border-color .2s ease; }
 .gallery-thumb:hover, .gallery-thumb:focus-visible { transform: translateY(-3px); border-color: var(--orange); outline: none; }
-.gallery-thumb img { display: block; width: 100%; height: auto; max-height: 680px; object-fit: contain; background: #f1f1f1; }
-.project-gallery.single .gallery-thumb img { max-height: 680px; }
+.gallery-thumb img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #f1f1f1; }
+.project-gallery.single .gallery-thumb img { height: auto; max-height: 660px; aspect-ratio: auto; object-fit: contain; }
 .gallery-thumb > span { display: flex; gap: 8px; align-items: center; padding: 11px; font-size: 10px; line-height: 1.4; }
 .gallery-thumb b { color: var(--orange); font-size: 8px; letter-spacing: .08em; }
 .empty-state { grid-column: 1 / -1; padding: 80px 20px; color: #777; text-align: center; border: 1px dashed #333; border-radius: var(--radius); }
