@@ -30,11 +30,15 @@ const experiences = [
       "채널별 영업 현황 관리와 VOC 프로세스 자동화"
     ],
     result: "채널 평균 대비 210% 유입, 4,000명+ 참여, 35건+ 계약 전환",
-    gallery: [
-      { src: "./assets/project-slides/bmw-series-lineup.png", label: "BMW 1·2 Series 모델 USP 분석" },
-      { src: "./assets/project-slides/bmw-quiz-campaign.png", label: "1·2 Series 퀴즈형 판매 활성화 캠페인" },
-      { src: "./assets/project-slides/bmw-funnel-automation.png", label: "Sales Funnel 관리·자동화" }
-    ],
+    groupGalleries: {
+      campaign: [
+        { src: "./assets/project-slides/bmw-series-lineup-v2.png", label: "BMW 1·2 Series 모델 USP 분석" },
+        { src: "./assets/project-slides/bmw-quiz-campaign.png", label: "1·2 Series 퀴즈형 판매 활성화 캠페인" }
+      ],
+      data: [
+        { src: "./assets/project-slides/bmw-funnel-automation.png", label: "VOC·Sales Funnel 관리 자동화" }
+      ]
+    },
     fit: {
       marketing: "CRM 고객 데이터를 타깃과 디지털 캠페인으로 전환해 채널 평균 대비 210% 유입, 4,000명+ 참여, 35건+ 계약을 만들었습니다.",
       newbiz: "VOC와 판매 Funnel을 함께 분석하고 프로세스를 자동화해 데이터 기반 실행력을 검증했습니다.",
@@ -69,10 +73,7 @@ const experiences = [
     ],
     result: "모델 리서치와 콘셉트 인사이트가 실제 제품 런칭 및 공식 인스타그램 콘텐츠 기획에 반영",
     gallery: [
-      { src: "./assets/project-slides/ob-nutrl-sampling-idea.png", label: "NÜTRL 샘플링·이벤트 부스 아이데이션" },
-      { src: "./assets/project-slides/ob-nutrl-launch-content.png", label: "NÜTRL 런칭·SNS 콘텐츠 기획" },
-      { src: "./assets/project-slides/ob-buzz-hybrid-analysis.png", label: "하이볼 버즈 인사이트 분석" },
-      { src: "./assets/project-slides/ob-buzz-market-summary.png", label: "소주·RTD 카테고리 버즈 분석" }
+      { src: "./assets/project-slides/ob-nutrl-launch-content-v2.png", label: "NÜTRL 런칭·SNS 콘텐츠 기획" }
     ],
     fit: {
       marketing: "판매·버즈 데이터로 브랜드 포지셔닝과 모델·협업 콘텐츠를 기획해 실제 런칭과 공식 SNS에 반영했습니다.",
@@ -297,7 +298,7 @@ const experiences = [
     ],
     result: "산학협력 프로젝트 3건 수주, 공식 SNS 게시글 9.3천 회 조회",
     gallery: [
-      { src: "./assets/project-slides/communication-overview-no-logo.png", label: "ECON PR·이화로사 커뮤니케이션 결과물" }
+      { src: "./assets/project-slides/communication-overview-clean-v2.png", label: "ECON PR·이화로사 커뮤니케이션 결과물" }
     ],
     fit: {
       marketing: "브랜드 SNS와 대외 커뮤니케이션을 직접 운영해 9.3천 조회와 협력 프로젝트 3건 수주로 연결했습니다.",
@@ -358,17 +359,18 @@ const slideCaption = document.getElementById("slideCaption");
 
 function cardTemplate(item, groupKey) {
   const cardTitle = item.groupTitles?.[groupKey] || item.title;
+  const cardGallery = item.groupGalleries?.[groupKey] || item.gallery || [];
   const metrics = item.metrics.map(metric => `
     <div class="metric"><strong>${metric.value}</strong><span>${metric.label}</span></div>
   `).join("");
   const tags = item.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
   const roleItems = item.role.map(text => `<li>${text}</li>`).join("");
   const actionItems = item.action.map(text => `<li>${text}</li>`).join("");
-  const gallery = item.gallery?.length ? `
+  const gallery = cardGallery.length ? `
     <div class="project-gallery-wrap">
       <div class="gallery-heading"><h4>Project Deck</h4><span>표지와 핵심 장표 · 클릭해서 크게 보기</span></div>
-      <div class="project-gallery">
-        ${item.gallery.map((slide, index) => `
+      <div class="project-gallery${cardGallery.length === 1 ? " single" : ""}">
+        ${cardGallery.map((slide, index) => `
           <button class="gallery-thumb" type="button" data-slide-src="${slide.src}" data-slide-caption="${item.company} · ${slide.label}">
             <img src="${slide.src}" alt="${item.company} ${slide.label}" loading="lazy">
             <span><b>${String(index + 1).padStart(2, "0")}</b>${slide.label}</span>
