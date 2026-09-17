@@ -206,7 +206,7 @@ const experiences = [
     skills: ["analysis", "planning", "customer", "communication"],
     tags: ["#금융산업", "#주식커뮤니티", "#리텐션", "#게이미피케이션"],
     metrics: [
-      { value: "16개", label: "서비스 전략 제안" },
+      { value: "15건", label: "서비스 전략 제안" },
       { value: "4개", label: "제안 전략 실제 반영" },
       { value: "대상", label: "산학협력 프로젝트" }
     ],
@@ -218,9 +218,9 @@ const experiences = [
     action: [
       "유입–탐색–참여–리텐션 전 과정의 사용자 여정과 Pain Point 구조화",
       "관심사 기반 큐레이션, 활동 등급제와 게이미피케이션 전략 설계",
-      "메인 UI/UX 개선과 벤치마킹을 포함한 16개 전략 제안, 4개 전략 실제 반영"
+      "메인 UI/UX 개선과 벤치마킹을 포함한 15건의 전략 제안, 4개 전략 실제 반영"
     ],
-    result: "16개 서비스 전략 제안, 4개 전략 실제 반영 및 산학협력 프로젝트 대상 수상",
+    result: "15건의 서비스 전략 제안, 4개 전략 실제 반영 및 산학협력 프로젝트 대상 수상",
     gallery: [
       { src: "./assets/project-slides/finter-cover.jpg", label: "프로젝트 표지" },
       { src: "./assets/project-slides/finter-journey.jpg", label: "유저 저니별 Pain Point" },
@@ -228,7 +228,7 @@ const experiences = [
     ],
     fit: {
       marketing: "투자자의 이용 행태와 이탈 요인을 고객 여정으로 구조화하고, 리텐션을 높이는 콘텐츠·게이미피케이션 전략으로 전환했습니다.",
-      newbiz: "주식 커뮤니티의 문제를 유저 테스트로 검증하고 16개 서비스 전략을 제안해 4개 전략의 실제 반영으로 연결했습니다.",
+      newbiz: "주식 커뮤니티의 문제를 유저 테스트로 검증하고 15건의 서비스 전략을 제안해 4개 전략의 실제 반영으로 연결했습니다.",
       investment: "투자 정보 탐색과 커뮤니티 참여 행태를 분석해 금융 고객의 니즈와 서비스 활성화 요인을 도출했습니다."
     }
   },
