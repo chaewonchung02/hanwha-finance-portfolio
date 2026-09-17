@@ -255,39 +255,6 @@ const experiences = [
     }
   },
   {
-    id: "loreal",
-    company: "L’Oréal Brandstorm",
-    type: "2025 공모전",
-    period: "2024.12 – 2025.03",
-    title: "남성 셀프케어 솔루션 NOVAIR 기획",
-    summary: "남성 그루밍 시장과 면도 후 피부 고민을 분석해 3-in-1 디바이스와 개인화 앱 서비스를 기획했습니다.",
-    roles: ["newbiz", "marketing", "investment"],
-    talents: ["creative", "purpose"],
-    skills: ["analysis", "planning", "customer", "global"],
-    tags: ["#신제품기획", "#TAM·SAM·SOM", "#개인화", "#Figma"],
-    metrics: [
-      { value: "8.0%", label: "분석 시장 CAGR" },
-      { value: "3-in-1", label: "올인원 디바이스" },
-      { value: "1개 앱", label: "개인화 서비스 연동" }
-    ],
-    role: [
-      "TAM·SAM·SOM 기반 Beard Care 시장성 검토",
-      "L’Oréal 제품 포트폴리오 공백 분석",
-      "남성 셀프케어 시장과 소비자 불편 정의"
-    ],
-    action: [
-      "면도 후 자극과 관리 번거로움을 핵심 Pain Point로 설정",
-      "Razor·Cleanser·Massager 결합 NOVAIR 콘셉트 기획",
-      "피부 상태 기반 개인화 기능과 앱 연동 서비스 제안"
-    ],
-    result: "시장 성장성과 고객 문제를 결합한 3-in-1 신규 제품·서비스 콘셉트 완성",
-    fit: {
-      marketing: "남성 셀프케어 고객의 불편과 시장 공백을 브랜드 제품 콘셉트·개인화 앱으로 구체화했습니다.",
-      newbiz: "TAM·SAM·SOM과 포트폴리오 공백을 근거로 신규 제품·서비스를 설계했습니다.",
-      investment: "CAGR 8.0% 시장의 규모와 포트폴리오 공백을 함께 검토했습니다."
-    }
-  },
-  {
     id: "communication",
     company: "ECON · 이화로사",
     type: "대외 홍보·기업 커뮤니케이션",
@@ -315,7 +282,7 @@ const experiences = [
     ],
     result: "산학협력 프로젝트 3건 수주, 공식 SNS 게시글 9.3천 회 조회",
     gallery: [
-      { src: "./assets/project-slides/communication-overview.jpg", label: "ECON PR·이화로사 커뮤니케이션 결과물" }
+      { src: "./assets/project-slides/communication-overview-no-logo.png", label: "ECON PR·이화로사 커뮤니케이션 결과물" }
     ],
     fit: {
       marketing: "브랜드 SNS와 대외 커뮤니케이션을 직접 운영해 9.3천 조회와 협력 프로젝트 3건 수주로 연결했습니다.",
@@ -340,7 +307,7 @@ const competencyDefinitions = [
     kicker: "CAMPAIGN PLANNING",
     title: "캠페인 기획력",
     description: "타깃과 메시지, 참여 장치를 설계해 고객 행동과 전환을 만든 경험",
-    experienceIds: ["bmw", "loreal"]
+    experienceIds: ["bmw"]
   },
   {
     key: "data",
