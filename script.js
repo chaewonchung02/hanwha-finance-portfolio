@@ -325,38 +325,56 @@ const experiences = [
   }
 ];
 
-const rankings = {
-  marketing: ["bmw", "ob", "kolon", "verish", "lgchem", "communication", "kakao", "finter", "loreal"],
-  newbiz: ["kakao", "kolon", "finter", "loreal", "lgchem", "verish", "ob", "bmw", "communication"],
-  investment: ["finter", "kakao", "loreal", "verish", "lgchem", "kolon", "ob", "bmw", "communication"]
-};
+const competencyDefinitions = [
+  {
+    key: "finance",
+    number: "01",
+    kicker: "FINANCE INDUSTRY EXPERIENCE",
+    title: "금융 산업 경험",
+    description: "금융 고객과 투자자의 이용 여정을 읽고 서비스 활성화 전략으로 연결한 경험",
+    experienceIds: ["finter", "kakao"]
+  },
+  {
+    key: "campaign",
+    number: "02",
+    kicker: "CAMPAIGN PLANNING",
+    title: "캠페인 기획력",
+    description: "타깃과 메시지, 참여 장치를 설계해 고객 행동과 전환을 만든 경험",
+    experienceIds: ["bmw", "loreal"]
+  },
+  {
+    key: "data",
+    number: "03",
+    kicker: "DATA MARKETING",
+    title: "데이터 마케팅",
+    description: "VOC·판매·버즈 데이터를 고객 인사이트와 실행 전략으로 전환한 경험",
+    experienceIds: ["bmw", "ob"]
+  },
+  {
+    key: "imc",
+    number: "04",
+    kicker: "IMC PLANNING & EXECUTION",
+    title: "IMC 기획·실행 경험",
+    description: "시장·고객 분석부터 채널별 실행안까지 통합적으로 설계한 경험",
+    experienceIds: ["lgchem", "kolon"]
+  },
+  {
+    key: "brand",
+    number: "05",
+    kicker: "BRAND & COMMUNICATION",
+    title: "브랜드·커뮤니케이션 감각",
+    description: "브랜드 콘셉트와 콘텐츠를 고객 접점에서 일관되게 구현한 경험",
+    experienceIds: ["verish", "communication"]
+  }
+];
 
-const roleLabels = { marketing: "BRAND / MARKETING", newbiz: "NEW BUSINESS", investment: "INVESTMENT" };
-const jdFitExperienceIds = {
-  finance: ["finter", "kakao"],
-  campaign: ["bmw"],
-  data: ["bmw", "ob"],
-  imc: ["lgchem", "kolon"],
-  brand: ["verish", "communication"]
-};
-let selectedRole = "marketing";
-let selectedSkill = "all";
-let selectedFit = "all";
-let searchTerm = "";
-const compared = new Set();
-
-const grid = document.getElementById("experienceGrid");
-const resultCount = document.getElementById("resultCount");
-const compareTray = document.getElementById("compareTray");
-const compareCount = document.getElementById("compareCount");
-const compareNames = document.getElementById("compareNames");
-const compareDialog = document.getElementById("compareDialog");
-const compareContent = document.getElementById("compareContent");
+const experienceIndex = new Map(experiences.map(item => [item.id, item]));
+const groupContainer = document.getElementById("competencyGroups");
 const slideDialog = document.getElementById("slideDialog");
 const slideImage = document.getElementById("slideImage");
 const slideCaption = document.getElementById("slideCaption");
 
-function cardTemplate(item, rank) {
+function cardTemplate(item, groupKey) {
   const metrics = item.metrics.map(metric => `
     <div class="metric"><strong>${metric.value}</strong><span>${metric.label}</span></div>
   `).join("");
@@ -375,9 +393,9 @@ function cardTemplate(item, rank) {
         `).join("")}
       </div>
     </div>` : "";
+  const detailsId = `details-${groupKey}-${item.id}`;
   return `
-    <article class="experience-card ${rank <= 3 ? "is-recommended" : ""}" id="experience-${item.id}" data-id="${item.id}">
-      ${rank <= 3 ? `<span class="card-rank">추천 ${rank}</span>` : ""}
+    <article class="experience-card" id="experience-${groupKey}-${item.id}" data-id="${item.id}">
       <div class="card-meta">
         <span class="company">${item.company} · ${item.type}</span>
         <span class="period">${item.period}</span>
@@ -386,45 +404,44 @@ function cardTemplate(item, rank) {
       <p class="card-summary">${item.summary}</p>
       <div class="metric-strip">${metrics}</div>
       <div class="tag-list">${tags}</div>
-      <div class="card-details" id="details-${item.id}"><div>
+      <div class="card-details" id="${detailsId}"><div>
         <div class="detail-columns">
           <div><h4>Role</h4><ul>${roleItems}</ul></div>
           <div><h4>Action</h4><ul>${actionItems}</ul></div>
         </div>
         <div class="detail-columns">
           <div><h4>Result</h4><ul><li>${item.result}</li></ul></div>
-          <div><h4>Hanwha Finance Fit</h4><ul><li>${item.fit[selectedRole]}</li></ul></div>
+          <div><h4>Hanwha Finance Fit</h4><ul><li>${item.fit.marketing}</li></ul></div>
         </div>
         ${gallery}
       </div></div>
       <div class="card-actions">
-        <button class="details-button" type="button" aria-expanded="false" aria-controls="details-${item.id}">세부 경험 펼치기</button>
-        <button class="compare-button ${compared.has(item.id) ? "selected" : ""}" type="button" data-compare="${item.id}" aria-pressed="${compared.has(item.id)}">${compared.has(item.id) ? "비교함에 담김" : "비교에 담기"}</button>
+        <button class="details-button" type="button" aria-expanded="false" aria-controls="${detailsId}">세부 경험 펼치기</button>
       </div>
     </article>`;
 }
 
-function getVisibleExperiences() {
-  const order = rankings[selectedRole];
-  return [...experiences]
-    .filter(item => item.roles.includes(selectedRole))
-    .filter(item => selectedFit === "all" || jdFitExperienceIds[selectedFit].includes(item.id))
-    .filter(item => selectedSkill === "all" || item.skills.includes(selectedSkill))
-    .filter(item => {
-      if (!searchTerm) return true;
-      const haystack = [item.company, item.type, item.title, item.summary, item.result, ...item.tags, ...item.role, ...item.action].join(" ").toLowerCase();
-      return haystack.includes(searchTerm);
-    })
-    .sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
-}
-
-function renderCards() {
-  const visible = getVisibleExperiences();
-  const order = rankings[selectedRole];
-  grid.innerHTML = visible.length
-    ? visible.map(item => cardTemplate(item, order.indexOf(item.id) + 1)).join("")
-    : `<div class="empty-state">조건에 맞는 경험이 없습니다. 필터나 검색어를 바꿔보세요.</div>`;
-  resultCount.textContent = visible.length;
+function renderCompetencyGroups() {
+  groupContainer.innerHTML = competencyDefinitions.map(group => {
+    const cards = group.experienceIds
+      .map(id => experienceIndex.get(id))
+      .filter(Boolean)
+      .map(item => cardTemplate(item, group.key))
+      .join("");
+    return `
+      <section class="competency-block reveal" id="competency-${group.key}" aria-labelledby="competency-title-${group.key}">
+        <header class="competency-heading">
+          <span class="competency-number">${group.number}</span>
+          <div>
+            <span class="competency-kicker">${group.kicker}</span>
+            <h3 id="competency-title-${group.key}">${group.title}</h3>
+            <p>${group.description}</p>
+          </div>
+          <span class="competency-count">${group.experienceIds.length} EXPERIENCES</span>
+        </header>
+        <div class="group-experience-grid">${cards}</div>
+      </section>`;
+  }).join("");
   bindCardEvents();
 }
 
@@ -437,53 +454,9 @@ function bindCardEvents() {
       button.textContent = isOpen ? "세부 경험 접기" : "세부 경험 펼치기";
     });
   });
-  document.querySelectorAll("[data-compare]").forEach(button => {
-    button.addEventListener("click", () => toggleCompare(button.dataset.compare));
-  });
   document.querySelectorAll("[data-slide-src]").forEach(button => {
     button.addEventListener("click", () => openSlide(button.dataset.slideSrc, button.dataset.slideCaption));
   });
-}
-
-function toggleCompare(id) {
-  if (compared.has(id)) {
-    compared.delete(id);
-  } else if (compared.size < 3) {
-    compared.add(id);
-  } else {
-    compareTray.animate([{ transform: "translateX(-50%)" }, { transform: "translateX(-52%)" }, { transform: "translateX(-48%)" }, { transform: "translateX(-50%)" }], { duration: 280 });
-    return;
-  }
-  updateCompareTray();
-  renderCards();
-}
-
-function updateCompareTray() {
-  compareTray.hidden = compared.size === 0;
-  compareCount.textContent = compared.size;
-  compareNames.innerHTML = [...compared].map(id => {
-    const item = experiences.find(exp => exp.id === id);
-    return `<span>${item.company}</span>`;
-  }).join("");
-}
-
-function openComparison() {
-  const items = [...compared].map(id => experiences.find(exp => exp.id === id));
-  if (!items.length) return;
-  compareContent.style.gridTemplateColumns = `repeat(${items.length}, minmax(0, 1fr))`;
-  compareContent.innerHTML = items.map(item => `
-    <article class="compare-column">
-      <span class="company">${item.company}</span>
-      <h3>${item.title}</h3>
-      <h4>정량 성과</h4>
-      <div class="compare-metrics">${item.metrics.map(metric => `<span>${metric.value} · ${metric.label}</span>`).join("")}</div>
-      <h4>역할</h4><ul>${item.role.map(text => `<li>${text}</li>`).join("")}</ul>
-      <h4>핵심 행동</h4><ul>${item.action.map(text => `<li>${text}</li>`).join("")}</ul>
-      <h4>결과</h4><ul><li>${item.result}</li></ul>
-      <h4>${roleLabels[selectedRole]} 활용 근거</h4><ul><li>${item.fit[selectedRole]}</li></ul>
-    </article>
-  `).join("");
-  compareDialog.showModal();
 }
 
 function openSlide(src, caption) {
@@ -493,42 +466,6 @@ function openSlide(src, caption) {
   slideDialog.showModal();
 }
 
-document.querySelectorAll(".jd-fit-card").forEach(button => {
-  button.addEventListener("click", () => {
-    const nextFit = button.dataset.fit;
-    selectedFit = selectedFit === nextFit ? "all" : nextFit;
-    document.querySelectorAll(".jd-fit-card").forEach(item => {
-      const active = item.dataset.fit === selectedFit;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-    renderCards();
-    document.getElementById("experiences").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
-
-document.querySelectorAll("#skillChips button").forEach(button => {
-  button.addEventListener("click", () => {
-    selectedSkill = button.dataset.skill;
-    document.querySelectorAll("#skillChips button").forEach(item => {
-      const active = item === button;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-    renderCards();
-  });
-});
-
-document.getElementById("experienceSearch").addEventListener("input", event => {
-  searchTerm = event.target.value.trim().toLowerCase();
-  renderCards();
-});
-
-document.getElementById("openCompare").addEventListener("click", openComparison);
-document.getElementById("closeCompare").addEventListener("click", () => compareDialog.close());
-compareDialog.addEventListener("click", event => {
-  if (event.target === compareDialog) compareDialog.close();
-});
 document.getElementById("closeSlide").addEventListener("click", () => slideDialog.close());
 slideDialog.addEventListener("click", event => {
   if (event.target === slideDialog) slideDialog.close();
@@ -544,6 +481,8 @@ motionToggle.addEventListener("click", () => {
   motionToggle.textContent = active ? "MOTION OFF" : "MOTION ON";
 });
 
+renderCompetencyGroups();
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -553,5 +492,3 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: .08 });
 document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
-
-renderCards();
