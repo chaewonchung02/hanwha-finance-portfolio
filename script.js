@@ -73,7 +73,10 @@ const experiences = [
     ],
     result: "모델 리서치와 콘셉트 인사이트가 실제 제품 런칭 및 공식 인스타그램 콘텐츠 기획에 반영",
     gallery: [
-      { src: "./assets/project-slides/ob-nutrl-launch-content-v2.png", label: "NÜTRL 런칭·SNS 콘텐츠 기획" }
+      { src: "./assets/project-slides/ob-nutrl-launch-content-v2.png", label: "NÜTRL 런칭·SNS 콘텐츠 기획" },
+      { src: "./assets/project-slides/ob-model-event-ideation-v2.png", label: "셀럽 모델·이벤트 부스 아이데이션" },
+      { src: "./assets/project-slides/ob-buzz-quantity-analysis-v2.png", label: "신제품 버즈 추이·판매 요인 분석" },
+      { src: "./assets/project-slides/ob-buzz-summary-v2.png", label: "주류 카테고리 버즈 비교 분석" }
     ],
     fit: {
       marketing: "판매·버즈 데이터로 브랜드 포지셔닝과 모델·협업 콘텐츠를 기획해 실제 런칭과 공식 SNS에 반영했습니다.",
