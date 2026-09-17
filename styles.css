@@ -176,7 +176,7 @@ body.motion-on .ring-three { animation: orbitThree 22s linear infinite; }
 .card-rank { position: absolute; top: 0; right: 0; padding: 9px 15px; color: #111; background: var(--orange); border-bottom-left-radius: 14px; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
 .card-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 30px; }
 .company { color: var(--orange); font-size: 11px; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
-.period { color: #6f6f6f; font-size: 10px; letter-spacing: .08em; }
+.period { color: #929292; font-size: 11px; letter-spacing: .06em; }
 .experience-card h3 { max-width: 520px; margin: 0; font-size: clamp(25px, 3vw, 38px); line-height: 1.18; letter-spacing: -.045em; word-break: keep-all; }
 .card-summary { min-height: 72px; margin: 18px 0 25px; color: #a8a8a8; font-size: 14px; line-height: 1.7; word-break: keep-all; }
 .metric-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 24px; border-top: 1px solid #333; border-bottom: 1px solid #333; }
@@ -184,7 +184,7 @@ body.motion-on .ring-three { animation: orbitThree 22s linear infinite; }
 .metric:last-child { padding-left: 12px; border-right: 0; }
 .metric:not(:first-child) { padding-left: 12px; }
 .metric strong { display: block; margin-bottom: 5px; color: var(--white); font-size: clamp(18px, 2.2vw, 28px); letter-spacing: -.04em; }
-.metric span { color: #696969; font-size: 9px; line-height: 1.4; letter-spacing: .06em; }
+.metric span { color: #aaa; font-size: 11px; font-weight: 600; line-height: 1.45; letter-spacing: .025em; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag { padding: 7px 10px; color: #b3b3b3; background: #202020; border-radius: 999px; font-size: 10px; }
 .card-actions { display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-top: 26px; }
@@ -197,17 +197,17 @@ body.motion-on .ring-three { animation: orbitThree 22s linear infinite; }
 .card-details > div { overflow: hidden; }
 .experience-card.open .card-details { grid-template-rows: 1fr; opacity: 1; }
 .detail-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding-top: 26px; }
-.detail-columns h4 { margin: 0 0 10px; color: var(--orange); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-.detail-columns ul { margin: 0; padding-left: 17px; color: #aaa; font-size: 12px; line-height: 1.75; }
+.detail-columns h4 { margin: 0 0 10px; color: var(--orange); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.detail-columns ul { margin: 0; padding-left: 17px; color: #c0c0c0; font-size: 13px; line-height: 1.75; }
 .project-gallery-wrap { margin-top: 28px; padding-top: 24px; border-top: 1px solid #333; }
 .gallery-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
 .gallery-heading h4 { margin: 0; color: var(--orange); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-.gallery-heading span { color: #666; font-size: 10px; }
-.project-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.gallery-heading span { color: #a0a0a0; font-size: 11px; }
+.project-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .gallery-thumb { overflow: hidden; padding: 0; color: #ddd; text-align: left; background: #0c0c0c; border: 1px solid #303030; border-radius: 12px; cursor: zoom-in; transition: transform .2s ease, border-color .2s ease; }
 .gallery-thumb:hover, .gallery-thumb:focus-visible { transform: translateY(-3px); border-color: var(--orange); outline: none; }
-.gallery-thumb img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #f1f1f1; }
-.gallery-thumb > span { display: flex; gap: 8px; align-items: center; padding: 10px; font-size: 9px; line-height: 1.35; }
+.gallery-thumb img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #f1f1f1; }
+.gallery-thumb > span { display: flex; gap: 8px; align-items: center; padding: 11px; font-size: 10px; line-height: 1.4; }
 .gallery-thumb b { color: var(--orange); font-size: 8px; letter-spacing: .08em; }
 .empty-state { grid-column: 1 / -1; padding: 80px 20px; color: #777; text-align: center; border: 1px dashed #333; border-radius: var(--radius); }
 

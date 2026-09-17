@@ -4,7 +4,11 @@ const experiences = [
     company: "BMW Korea",
     type: "CRM 마케팅 인턴",
     period: "2026.01 – 2026.06",
-    title: "Customer Lifecycle 기반 CRM 마케팅",
+    title: "1·2 Series 판매 활성화 캠페인 기획",
+    groupTitles: {
+      campaign: "1·2 Series 판매 활성화 캠페인 기획",
+      data: "VOC·판매 Funnel 기반 CRM 데이터 마케팅"
+    },
     summary: "7개 딜러사의 판매 성과와 VOC를 분석하고, 타깃 캠페인을 실제 계약 전환까지 연결했습니다.",
     roles: ["marketing", "newbiz", "investment"],
     talents: ["discipline", "creative", "purpose"],
@@ -26,6 +30,11 @@ const experiences = [
       "채널별 영업 현황 관리와 VOC 프로세스 자동화"
     ],
     result: "채널 평균 대비 210% 유입, 4,000명+ 참여, 35건+ 계약 전환",
+    gallery: [
+      { src: "./assets/project-slides/bmw-series-lineup.png", label: "BMW 1·2 Series 모델 USP 분석" },
+      { src: "./assets/project-slides/bmw-quiz-campaign.png", label: "1·2 Series 퀴즈형 판매 활성화 캠페인" },
+      { src: "./assets/project-slides/bmw-funnel-automation.png", label: "Sales Funnel 관리·자동화" }
+    ],
     fit: {
       marketing: "CRM 고객 데이터를 타깃과 디지털 캠페인으로 전환해 채널 평균 대비 210% 유입, 4,000명+ 참여, 35건+ 계약을 만들었습니다.",
       newbiz: "VOC와 판매 Funnel을 함께 분석하고 프로세스를 자동화해 데이터 기반 실행력을 검증했습니다.",
@@ -37,7 +46,7 @@ const experiences = [
     company: "OB맥주",
     type: "신제품 기획·마케팅 인턴",
     period: "2025.09 – 2025.12",
-    title: "시장·소비자 분석을 신제품 런칭으로 연결",
+    title: "판매·버즈 데이터 기반 신제품 포지셔닝",
     summary: "주류 시장과 소비자 반응을 분석해 제품 콘셉트, 패키지, 홍보 방향을 구체화하고 출시를 지원했습니다.",
     roles: ["marketing", "newbiz", "investment"],
     talents: ["discipline", "creative"],
@@ -59,6 +68,12 @@ const experiences = [
       "브랜드 이미지를 고려한 모델 및 협업 콘텐츠 방향 제안"
     ],
     result: "모델 리서치와 콘셉트 인사이트가 실제 제품 런칭 및 공식 인스타그램 콘텐츠 기획에 반영",
+    gallery: [
+      { src: "./assets/project-slides/ob-nutrl-sampling-idea.png", label: "NÜTRL 샘플링·이벤트 부스 아이데이션" },
+      { src: "./assets/project-slides/ob-nutrl-launch-content.png", label: "NÜTRL 런칭·SNS 콘텐츠 기획" },
+      { src: "./assets/project-slides/ob-buzz-hybrid-analysis.png", label: "하이볼 버즈 인사이트 분석" },
+      { src: "./assets/project-slides/ob-buzz-market-summary.png", label: "소주·RTD 카테고리 버즈 분석" }
+    ],
     fit: {
       marketing: "판매·버즈 데이터로 브랜드 포지셔닝과 모델·협업 콘텐츠를 기획해 실제 런칭과 공식 SNS에 반영했습니다.",
       newbiz: "AI 기반 정량·정성 분석으로 제품 콘셉트와 시장 진입 방향을 설계했습니다.",
@@ -70,7 +85,7 @@ const experiences = [
     company: "코오롱모빌리티그룹",
     type: "산학협력 프로젝트",
     period: "대상 수상",
-    title: "인증중고차 마케팅 및 판매 전략 프로젝트",
+    title: "구매 여정 기반 인증중고차 IMC·판매 전략",
     summary: "국내외 중고차 시장과 소비자 218명의 구매 여정을 분석해 차량 상태에 대한 불신을 도출하고, 자사 A/S 인프라 기반의 차별화 서비스와 판매 전략을 제안했습니다.",
     roles: ["marketing", "newbiz", "investment"],
     talents: ["discipline", "creative", "purpose"],
@@ -108,7 +123,7 @@ const experiences = [
     company: "LG화학",
     type: "산학협력 프로젝트 · PM",
     period: "2025.04 – 2025.05",
-    title: "친환경 소재 적용 및 LETZero IMC 전략",
+    title: "750건 고객 조사 기반 LETZero IMC 기획",
     summary: "가전제품 내 친환경 소재 적용 가능성과 소비자 커뮤니케이션 전략을 제안했습니다.",
     roles: ["marketing", "newbiz", "investment"],
     talents: ["creative", "purpose", "discipline"],
@@ -146,7 +161,7 @@ const experiences = [
     company: "카카오뱅크",
     type: "산학협력 프로젝트",
     period: "2025.04 – 2025.05",
-    title: "User Journey 기반 DAU 성장 전략",
+    title: "금융앱 이탈 요인 분석 기반 DAU 성장 전략",
     summary: "상위 트래픽 앱과 금융앱 이용자 행동을 분석해 ‘금융+생활 필수앱’을 위한 DAU 확보 전략을 제안했습니다.",
     roles: ["marketing", "newbiz", "investment"],
     talents: ["creative", "purpose", "discipline"],
@@ -184,15 +199,15 @@ const experiences = [
     company: "Quantit · Finter",
     type: "산학협력 프로젝트",
     period: "2024.11 – 2024.12 · 대상",
-    title: "주식 커뮤니티 리텐션 향상 전략",
+    title: "투자자 이용 여정 기반 주식 커뮤니티 활성화 전략",
     summary: "투자 정보의 격차를 줄이고 신뢰 기반 커뮤니티를 만들기 위해 유입부터 리텐션까지의 이용 여정을 분석하고 서비스 활성화 전략을 제안했습니다.",
     roles: ["marketing", "newbiz", "investment"],
     talents: ["discipline", "creative", "purpose"],
     skills: ["analysis", "planning", "customer", "communication"],
     tags: ["#금융산업", "#주식커뮤니티", "#리텐션", "#게이미피케이션"],
     metrics: [
-      { value: "20개", label: "전략 아이디어 도출" },
-      { value: "8개", label: "서비스 전략 구체화" },
+      { value: "16개", label: "서비스 전략 제안" },
+      { value: "4개", label: "제안 전략 실제 반영" },
       { value: "대상", label: "산학협력 프로젝트" }
     ],
     role: [
@@ -203,9 +218,9 @@ const experiences = [
     action: [
       "유입–탐색–참여–리텐션 전 과정의 사용자 여정과 Pain Point 구조화",
       "관심사 기반 큐레이션, 활동 등급제와 게이미피케이션 전략 설계",
-      "메인 UI/UX 개선과 벤치마킹을 포함한 20개 아이디어·8개 전략 구체화"
+      "메인 UI/UX 개선과 벤치마킹을 포함한 16개 전략 제안, 4개 전략 실제 반영"
     ],
-    result: "유저 인사이트 기반 서비스 활성화 전략으로 산학협력 프로젝트 대상 수상",
+    result: "16개 서비스 전략 제안, 4개 전략 실제 반영 및 산학협력 프로젝트 대상 수상",
     gallery: [
       { src: "./assets/project-slides/finter-cover.jpg", label: "프로젝트 표지" },
       { src: "./assets/project-slides/finter-journey.jpg", label: "유저 저니별 Pain Point" },
@@ -213,7 +228,7 @@ const experiences = [
     ],
     fit: {
       marketing: "투자자의 이용 행태와 이탈 요인을 고객 여정으로 구조화하고, 리텐션을 높이는 콘텐츠·게이미피케이션 전략으로 전환했습니다.",
-      newbiz: "주식 커뮤니티의 문제를 유저 테스트로 검증하고 20개 아이디어를 8개 실행 전략으로 구체화했습니다.",
+      newbiz: "주식 커뮤니티의 문제를 유저 테스트로 검증하고 16개 서비스 전략을 제안해 4개 전략의 실제 반영으로 연결했습니다.",
       investment: "투자 정보 탐색과 커뮤니티 참여 행태를 분석해 금융 고객의 니즈와 서비스 활성화 요인을 도출했습니다."
     }
   },
@@ -222,7 +237,7 @@ const experiences = [
     company: "Verish",
     type: "산학협력 프로젝트",
     period: "2025.02 – 2025.04",
-    title: "북미 인플루언서 시딩·플래그십 바이럴",
+    title: "‘Very She’ 콘셉트 브랜딩 및 인플루언서 시딩 전략",
     summary: "4개국 시장을 비교해 우선 진출 국가를 선정하고 북미 인플루언서 시딩까지 직접 실행했습니다.",
     roles: ["marketing", "newbiz", "investment"],
     talents: ["discipline", "creative", "purpose"],
@@ -259,7 +274,7 @@ const experiences = [
     company: "ECON · 이화로사",
     type: "대외 홍보·기업 커뮤니케이션",
     period: "2022.03 – 2025.06",
-    title: "사람과 조직을 잇는 커뮤니케이션",
+    title: "브랜드 채널 콘텐츠 기획 및 대외 커뮤니케이션",
     summary: "기업 대상 협력 제안부터 학교 대표 홍보까지 내외부 고객과의 접점을 직접 운영했습니다.",
     roles: ["marketing", "newbiz"],
     talents: ["discipline", "purpose"],
@@ -342,6 +357,7 @@ const slideImage = document.getElementById("slideImage");
 const slideCaption = document.getElementById("slideCaption");
 
 function cardTemplate(item, groupKey) {
+  const cardTitle = item.groupTitles?.[groupKey] || item.title;
   const metrics = item.metrics.map(metric => `
     <div class="metric"><strong>${metric.value}</strong><span>${metric.label}</span></div>
   `).join("");
@@ -367,7 +383,7 @@ function cardTemplate(item, groupKey) {
         <span class="company">${item.company} · ${item.type}</span>
         <span class="period">${item.period}</span>
       </div>
-      <h3>${item.title}</h3>
+      <h3>${cardTitle}</h3>
       <p class="card-summary">${item.summary}</p>
       <div class="metric-strip">${metrics}</div>
       <div class="tag-list">${tags}</div>
